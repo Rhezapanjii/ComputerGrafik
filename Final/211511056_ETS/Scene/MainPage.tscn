@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scene/Script/MainPage.gd" type="Script" id=1]
+[ext_resource path="res://Asset/FONT/background/DRONE.jpg" type="Texture" id=2]
+[ext_resource path="res://Asset/FONT/Carnevalee Freakshow.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 41
+outline_size = 4
+outline_color = Color( 0.12549, 0.541176, 0.686275, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 39
+outline_size = 3
+outline_color = Color( 0.0666667, 0.517647, 0.878431, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 41
+outline_size = 4
+outline_color = Color( 0.12549, 0.541176, 0.686275, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 67
+outline_size = 5
+outline_color = Color( 0.827451, 0.545098, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="MainPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 53.0
+margin_top = 420.0
+margin_right = 244.0
+margin_bottom = 552.0
+
+[node name="pola" type="Button" parent="VBoxContainer"]
+margin_right = 191.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 1 )
+text = "POLA 2D"
+flat = true
+
+[node name="animasi" type="Button" parent="VBoxContainer"]
+margin_top = 57.0
+margin_right = 191.0
+margin_bottom = 108.0
+custom_colors/font_color_disabled = Color( 0.760784, 0.0666667, 0.0666667, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ANIMASI 2D"
+flat = true
+
+[node name="About" type="Button" parent="VBoxContainer"]
+margin_top = 112.0
+margin_right = 191.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 3 )
+text = "About"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 85.0
+margin_right = 691.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 4 )
+text = "FLYING DRONE"
+
+[connection signal="pressed" from="VBoxContainer/pola" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/animasi" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="VBoxContainer/About" to="." method="_on_Exit_pressed"]

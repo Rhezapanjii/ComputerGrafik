@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://naga.gd" type="Script" id=1]
+[ext_resource path="res://char-removebg-preview.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 8.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="naga" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="naga"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="naga"]
+position = Vector2( 523, 282 )
+texture = ExtResource( 2 )
+
+[node name="cek" type="Area2D" parent="naga"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="naga/cek"]
+shape = SubResource( 2 )
+script = ExtResource( 1 )
